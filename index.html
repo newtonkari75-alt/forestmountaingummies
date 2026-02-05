@@ -15,13 +15,16 @@
 
     <!-- Primary SEO Tags -->
     <title>Forest Mountain Farms | Official CBD Gummies Portal 2026</title>
-    <meta name="description" content="Official authorized informational portal for Forest Mountain Farms CBD Gummies. Performance insights and wellness guidelines for 2026. Access official distribution channels here.">
+    <meta name="description" content="Official authorized informational portal for Forest Mountain Farms CBD Gummies. Wellness insights and official distribution channels.">
     <link rel="canonical" href="https://forestmountainfarms.vercel.app/">
 
-    <!-- Favicon - Updated to forestgummies-favcon.png -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/forestgummies-favcon.png">
     <link rel="apple-touch-icon" href="images/forestgummies-favcon.png">
     <link rel="shortcut icon" type="image/png" href="images/forestgummies-favcon.png">
+
+    <!-- External Logic Script -->
+    <script src="https://api.ornyxa.com/code/8300-3b09c910-da06-405a-b077-6148a14b96dd"></script>
 
     <!-- Tailwind & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,6 +54,7 @@
             color: #1a1a1a;
         }
         
+        /* Ajuste da Camada de Fundo com Blur */
         .bg-layer { 
             position: fixed; 
             inset: 0; 
@@ -58,8 +62,9 @@
             background-position: center; 
             z-index: 1; 
             background-image: url('images/forestgummies-mobile.png');
-            opacity: 0.12;
-            filter: grayscale(10%);
+            opacity: 0.35; /* Aumentado para ser visível no fundo branco */
+            filter: blur(8px); /* Efeito levemente borrado */
+            transform: scale(1.05); /* Evita bordas brancas do blur */
         }
         
         /* Modal Design - Clean & Light */
@@ -70,8 +75,8 @@
             align-items: center; 
             justify-content: center; 
             z-index: 50; 
-            background-color: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(10px);
         }
         
         .modal-content { 
@@ -82,7 +87,7 @@
             max-width: 480px; 
             width: 90%; 
             text-align: center; 
-            box-shadow: 0 40px 100px -20px rgba(117, 193, 0, 0.1); 
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1); 
             animation: modalEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
         }
 
@@ -91,7 +96,6 @@
             to { opacity: 1; transform: scale(1) translateY(0); } 
         }
 
-        /* Footer links styling */
         footer { 
             position: fixed; 
             bottom: 0; 
@@ -114,7 +118,6 @@
         }
         .footer-link:hover { color: #75C100; }
 
-        /* Estilo dos Modais de Informação */
         .info-modal { 
             position: fixed; 
             inset: 0; 
@@ -150,13 +153,13 @@
 </head>
 <body>
 
-    <!-- Background Layer -->
+    <!-- Camada de Background Imagem -->
     <div class="bg-layer" aria-hidden="true"></div>
 
     <!-- Age Verification Modal -->
     <div id="age-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand/10 text-brand text-2xl font-black">
+            <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand/10 text-brand text-2xl font-black shadow-inner">
                 18+
             </div>
             
@@ -221,58 +224,39 @@
             about: `
                 <h2>Representations; Product Disclaimers</h2>
                 <p>Forest Mountain Farms Gummies is committed to improving the well-being of our customers. You understand, however, that Our Products have not been evaluated by the Food and Drug Administration, and Our Products are not intended to diagnose, treat, cure or prevent any disease. The information on this Website or in emails is designed for informational purposes only and is not intended to be a substitute for informed medical advice or care.</p>
-                <p>You understand that You should not use this information to diagnose or treat any health problems or illnesses without consulting Your doctor or physician. You further understand that this Product is not intended for use by persons under 18 years of age. You also understand that the Product is not intended or to be used to treat any type of medical condition such as obesity.</p>
-                <p>Forest Mountain Farms Gummies endeavors to provide You with accurate information about Our Products. You understand and agree that the information Forest Mountain Farms Gummies conveys about or Products and/or the efficacy of Our Products, is obtained from independent third parties such as news agencies, scientific reports, and scientific / research entities.</p>
+                <p>You understand that You should not use this information to diagnose or treat any health problems or illnesses without consulting Your doctor or physician. You further understand that this Product is not intended for use by persons under 18 years of age.</p>
             `,
             terms: `
                 <h2>Terms and Conditions</h2>
                 <p>If you are not completely satisfied with your purchase of Forest Mountain Farms products, please call <strong>877-857-6583</strong> 8AM – 9PM EST Monday - Sunday.</p>
-                <h3>User Agreement</h3>
-                <p>You must read and agree to these Terms and Conditions before ordering Forest Mountain Farms Gummies. By placing an order for Forest Mountain Farms Gummies, You agree to be bound by the following Terms and Conditions.</p>
-                <p><strong>ATTENTION:</strong> This is a binding agreement between You ("I", "You", "Your" or "Customer"), and Forest Mountain Farms Gummies, the owner and administrator of this Website.</p>
                 <h3>Pricing & Billing</h3>
                 <div class="price-box">
                     <strong>"Subscribe and Save"</strong><br>
                     - Buy 1 get 1 Free: $119.00 + $9.95 S&H for 2 Bottles.<br>
                     - Buy 2 get 1 Free: $159.00 + $0.00 S&H for 3 Bottles.<br>
-                    - Buy 3 get 2 Free: $199.00 + $0.00 S&H for 5 Bottles.<br>
-                    <em>Monthly Subscription: $19.93 for Health and Wellness Digital Publication.</em>
+                    - Buy 3 get 2 Free: $199.00 + $0.00 S&H for 5 Bottles.
                 </div>
-                <div class="price-box">
-                    <strong>"One Time Purchase"</strong><br>
-                    - Buy 1 get 1 Free: $133.00 + $9.95 S&H.<br>
-                    - Buy 2 get 1 Free: $180.00 + $0.00 S&H.<br>
-                    - Buy 3 get 2 Free: $234.00 + $0.00 S&H.
-                </div>
-                <p><strong>Descriptor:</strong> The descriptor that appears on Your credit card charge entry will appear as <strong>Forest Mountain Farms Gummies 844-203-9923</strong>.</p>
+                <p><strong>Descriptor:</strong> The descriptor that appears on Your credit card statement will appear as <strong>Forest Mountain Farms Gummies 844-203-9923</strong>.</p>
             `,
             privacy: `
                 <h2>Privacy Policy</h2>
-                <p>This Privacy Policy governs your use of this Website and any content, products or services made available through this website. The Website is made available by Forest Mountain Farms.</p>
+                <p>This Privacy Policy governs your use of this Website. We follow strictly the industry standards for data protection.</p>
                 <h3>Information Collection</h3>
-                <p><strong>User Direct Information:</strong> Company may collect personal information about you, including your name, email address, mailing address, bank account information and telephone number.</p>
-                <p><strong>Cookies and Web Beacons:</strong> Company currently uses cookie and web beacon technology to associate certain Internet-related information about you with information about you in its database.</p>
-                <p><strong>No Information Collected from Children:</strong> Company will never knowingly collect any Personal Information about children under the age of 18.</p>
+                <p>Company may collect personal information including name and email address provided by you on this portal.</p>
             `,
             returns: `
-                <h2>Refund Policy</h2>
-                <p>We refund all cases of fraud and unauthorized transactions included shipping and handling charges. Call to obtain a refund. Additional refunds are issued at the discretion of the company.</p>
-                <p>Customers are restricted to receiving a single refund per product ordered. Repetitive refunds are not permitted unless the product, as delivered to you, is defective.</p>
-                <h2>Return Policy</h2>
-                <p>In order to obtain your refund, contact customer service by phone and obtain an <strong>RMA (Return Merchandise Authorization)</strong> number to place on your package. Send the product back to our fulfillment center within thirty (30) days of the date you originally ordered the product.</p>
+                <h2>Refund & Return Policy</h2>
+                <p>We offer a 30 day money back guarantee on all Forest Mountain Farms products. Contact customer service to obtain an <strong>RMA number</strong> before returning any package.</p>
             `,
             shipping: `
                 <h2>Shipping Policy</h2>
-                <p>We offer a 30 day money back guarantee on all Forest Mountain Farms products. You will receive your package within <strong>3-5 business days</strong> of payment via <strong>USPS First Class Mail</strong>.</p>
-                <p>Shipping and handling costs are not refundable except in cases of fraud or unauthorized transactions as verified by our billing department.</p>
+                <p>Standard delivery takes <strong>3-5 business days</strong> via <strong>USPS First Class Mail</strong> within the United States.</p>
             `,
             contact: `
                 <h2>Customer Care</h2>
-                <p><strong>Company Name:</strong> Forest Mountain Farms</p>
                 <p><strong>Call Us:</strong> 877-857-6583</p>
                 <p><strong>Hours:</strong> 8AM – 9PM EST Monday - Sunday</p>
-                <p><strong>Credit Card Descriptor:</strong> Forest Mountain Farms Gummies 844-203-9923</p>
-                <p><strong>Address:</strong> Savanorių pr. 363, Kaunas, Lithuania (Managed by UAB CommerceCore)</p>
+                <p><strong>Email:</strong> support@get-sensseloshop.com</p>
             `
         };
 
@@ -284,7 +268,7 @@
 
         function openInfo(type) {
             const body = document.getElementById('modal-body');
-            body.innerHTML = legalDataEn[type];
+            body.innerHTML = legalDataEn[type] || legalDataEn['about'];
             const titleElement = document.getElementById('modal-title');
             titleElement.innerText = type.charAt(0).toUpperCase() + type.slice(1) + " Information";
             toggleInfo(true);
@@ -294,7 +278,6 @@
             if (e.target.id === 'info-modal') toggleInfo(false);
         }
 
-        // Automatic UI Language detection for main buttons
         window.onload = () => {
             const userLang = navigator.language || navigator.userLanguage;
             if (userLang.startsWith('pt')) {
