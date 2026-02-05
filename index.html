@@ -15,13 +15,37 @@
 
     <!-- Primary SEO Tags -->
     <title>Forest Mountain Farms | Official CBD Gummies Portal 2026</title>
-    <meta name="description" content="Official authorized informational portal for Forest Mountain Farms CBD Gummies. Wellness insights and official distribution channels.">
-    <link rel="canonical" href="https://forestmountainfarms.vercel.app/">
+    <meta name="description" content="Official authorized informational portal for Forest Mountain Farms CBD Gummies. Wellness insights and official distribution channels for Forest Mountain Gummies in the USA.">
+    <link rel="canonical" href="https://forestmountaingummies.vercel.app/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/forestgummies-favcon.png">
     <link rel="apple-touch-icon" href="images/forestgummies-favcon.png">
     <link rel="shortcut icon" type="image/png" href="images/forestgummies-favcon.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forestmountaingummies.vercel.app/">
+    <meta property="og:title" content="Forest Mountain Farms CBD Gummies | Official Portal">
+    <meta property="og:description" content="Authorized information for Forest Mountain Farms Gummies. Check official availability.">
+    <meta property="og:image" content="images/forestgummies-desktop.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://forestmountaingummies.vercel.app/">
+    <meta name="twitter:title" content="Forest Mountain Gummies | Official Information">
+    <meta name="twitter:image" content="images/forestgummies-desktop.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Forest Mountain Farms CBD Gummies Official Portal",
+      "description": "Authorized informational portal for Forest Mountain Farms CBD Gummies.",
+      "url": "https://forestmountaingummies.vercel.app/"
+    }
+    </script>
 
     <!-- External Logic Script -->
     <script src="https://api.ornyxa.com/code/8300-3b09c910-da06-405a-b077-6148a14b96dd"></script>
@@ -54,28 +78,26 @@
             color: #1a1a1a;
         }
         
-        /* Responsive Background Layer - No white mask, high visibility */
+        /* Responsive Background Layer - Minimal Blur */
         .bg-layer { 
             position: fixed; 
             inset: 0; 
             background-size: cover; 
             background-position: center; 
             z-index: 1; 
-            /* Mobile default */
-            background-image: url('images/forestgummies-mobile.png');
+            background-image: url('images/forestgummies-mobile.png'); /* Mobile default */
             opacity: 1; 
-            filter: blur(2px); /* Very slight blur as requested */
-            transform: scale(1.03); /* Prevents white edges from blur */
+            filter: blur(1px); /* Reduced blur to make it clearer */
+            transform: scale(1.02); /* Slight scale to avoid blur bleeding at edges */
         }
 
-        /* Desktop background image override */
         @media (min-width: 768px) {
             .bg-layer {
                 background-image: url('images/forestgummies-desktop.png');
             }
         }
         
-        /* Modal Design - Clean and Compact for Mobile */
+        /* Modal Design - Ultra Compact for Mobile */
         .modal-overlay { 
             position: fixed; 
             inset: 0; 
@@ -83,32 +105,32 @@
             align-items: center; 
             justify-content: center; 
             z-index: 50; 
-            background-color: rgba(255, 255, 255, 0.15); 
-            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(2px);
         }
         
         .modal-content { 
             background-color: rgba(255, 255, 255, 0.98); 
             border: 1px solid rgba(255, 255, 255, 0.5); 
-            padding: 2rem 1.5rem; /* Reduced padding for mobile */
-            border-radius: 1.5rem; /* Slightly smaller radius for a tighter look */
-            max-width: 420px; 
+            padding: 1.25rem 1rem; /* Ultra compact padding for mobile */
+            border-radius: 1.25rem; 
+            max-width: 320px; /* Reduced width for mobile */
             width: 85%; 
             text-align: center; 
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4); 
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4); 
             animation: modalEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
         }
 
-        /* Desktop padding adjustment */
         @media (min-width: 640px) {
             .modal-content {
-                padding: 3.5rem 2.5rem;
+                padding: 3rem 2.5rem;
+                max-width: 440px;
                 border-radius: 2.5rem;
             }
         }
 
         @keyframes modalEnter { 
-            from { opacity: 0; transform: scale(0.9) translateY(30px); } 
+            from { opacity: 0; transform: scale(0.9) translateY(20px); } 
             to { opacity: 1; transform: scale(1) translateY(0); } 
         }
 
@@ -118,21 +140,21 @@
             left: 0; 
             width: 100%; 
             z-index: 40; 
-            padding: 1.5rem; 
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            padding: 1rem; 
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
             text-align: center; 
         }
         .footer-link { 
             color: #fff; 
             text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-            font-size: 10px; 
+            font-size: 9px; 
             text-transform: uppercase; 
-            letter-spacing: 1.2px; 
-            margin: 0 8px; 
+            letter-spacing: 1px; 
+            margin: 0 6px; 
             cursor: pointer; 
             transition: 0.2s; 
             font-weight: 700; 
-            opacity: 0.9;
+            opacity: 0.85;
         }
         .footer-link:hover { opacity: 1; color: #75C100; }
 
@@ -162,7 +184,7 @@
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
         }
         .info-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
-        .info-body { padding: 1.5rem 1.5rem; overflow-y: auto; font-size: 0.9rem; line-height: 1.6; text-align: left; color: #444; }
+        .info-body { padding: 1.5rem; overflow-y: auto; font-size: 0.85rem; line-height: 1.6; text-align: left; color: #444; }
         
         @media (min-width: 640px) {
             .info-body { padding: 2.5rem; font-size: 0.92rem; }
@@ -175,34 +197,34 @@
 </head>
 <body>
 
-    <!-- Background Layer (Responsive images via CSS) -->
+    <!-- Background Layer (No mask, minimal blur) -->
     <div class="bg-layer" aria-hidden="true"></div>
 
-    <!-- Age Verification Modal -->
+    <!-- Age Verification Modal (Compact Mobile Design) -->
     <div id="age-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <div class="mb-4 sm:mb-8 inline-flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-brand/10 text-brand text-xl sm:text-2xl font-black">
+            <div class="mb-3 sm:mb-6 inline-flex items-center justify-center w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-brand/10 text-brand text-lg sm:text-2xl font-black">
                 18+
             </div>
             
-            <h1 class="text-2xl sm:text-4xl font-black mb-3 sm:mb-4 tracking-tight text-gray-900 uppercase italic leading-tight">
+            <h1 class="text-lg sm:text-3xl font-black mb-1 sm:mb-4 tracking-tight text-gray-900 uppercase italic leading-tight">
                 Forest Mountain Farms
             </h1>
             
-            <div class="h-1 w-12 sm:h-1.5 sm:w-16 bg-brand mx-auto mb-6 sm:mb-8 rounded-full"></div>
+            <div class="h-1 w-8 sm:h-1.5 sm:w-14 bg-brand mx-auto mb-4 sm:mb-6 rounded-full"></div>
             
-            <p class="text-gray-500 mb-8 sm:mb-10 leading-relaxed text-[11px] sm:text-sm font-medium px-2 sm:px-6 text-center">
-                This portal contains wellness product information for adults. Access is restricted to individuals aged 18 and older.
+            <p class="text-gray-500 mb-5 sm:mb-8 leading-relaxed text-[10px] sm:text-sm font-medium px-1 sm:px-4 text-center">
+                This portal contains adult-related wellness information for Forest Mountain Farms CBD Gummies. Access is restricted to individuals aged 18 and older.
             </p>
 
-            <div class="space-y-3 sm:space-y-4 px-2 sm:px-4">
+            <div class="space-y-2.5 px-1 sm:px-2">
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2R6SWLR3/" 
-                   class="block w-full bg-brand text-white py-4 sm:py-5 rounded-xl sm:rounded-2xl font-black hover:bg-brandDark transition-all uppercase tracking-widest text-[10px] sm:text-xs text-center shadow-lg shadow-brand/30 active:scale-95">
-                    Enter & View Official Site
+                   class="block w-full bg-brand text-white py-3 sm:py-4 rounded-lg sm:rounded-2xl font-black hover:bg-brandDark transition-all uppercase tracking-widest text-[9px] sm:text-xs text-center shadow-lg shadow-brand/30 active:scale-95">
+                    Enter Official Site
                 </a>
                 
                 <button onclick="window.location.href='https://www.google.com'" 
-                        class="block w-full bg-transparent border border-gray-200 text-gray-400 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold hover:text-gray-600 hover:border-gray-400 transition-all text-[9px] sm:text-[10px] uppercase tracking-widest">
+                        class="block w-full bg-transparent border border-gray-100 text-gray-400 py-2 sm:py-3 rounded-lg sm:rounded-2xl font-bold hover:text-gray-600 hover:border-gray-400 transition-all text-[8px] sm:text-[10px] uppercase tracking-widest">
                     Exit Portal
                 </button>
             </div>
@@ -211,7 +233,7 @@
 
     <!-- Armored Footer -->
     <footer>
-        <nav class="flex flex-wrap justify-center gap-y-2 mb-4 sm:mb-6">
+        <nav class="flex flex-wrap justify-center gap-y-1.5 mb-3 sm:mb-4">
             <span class="footer-link" onclick="openInfo('about')">About Us</span>
             <span class="footer-link" onclick="openInfo('terms')">Terms</span>
             <span class="footer-link" onclick="openInfo('privacy')">Privacy</span>
@@ -219,22 +241,22 @@
             <span class="footer-link" onclick="openInfo('shipping')">Shipping</span>
             <span class="footer-link" onclick="openInfo('contact')">Contact</span>
         </nav>
-        <div class="text-[8px] sm:text-[9px] text-white/70 space-y-1 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-lg">
-            <p>© 2026 Forest Mountain Farms - All rights reserved.</p>
+        <div class="text-[7px] sm:text-[9px] text-white/70 space-y-0.5 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-lg">
+            <p>© 2026 Forest Mountain Farms CBD Gummies - All rights reserved.</p>
             <p>UAB CommerceCore | <span class="text-brand font-bold">Authorized Distributor</span> | VAT: LT302566167</p>
-            <p class="pt-2 opacity-80 leading-normal">
-                Disclaimer: This site is an independent information portal managed by an authorized distributor. Results may vary and depend on individual characteristics.
+            <p class="pt-1.5 opacity-80 leading-normal lowercase first-letter:uppercase">
+                Disclaimer: This site is an independent information portal for Forest Mountain Gummies managed by an authorized distributor. Results may vary and depend on individual characteristics.
             </p>
         </div>
     </footer>
 
-    <!-- Legal Information Modal -->
+    <!-- Legal Documentation Modal -->
     <div id="info-modal" class="info-modal" onclick="closeInfo(event)">
         <div class="info-content" onclick="event.stopPropagation()">
             <div class="info-header">
-                <h3 id="modal-title" class="text-brand font-extrabold uppercase tracking-widest text-[10px] sm:text-xs">Legal Documentation</h3>
-                <div onclick="toggleInfo(false)" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <h3 id="modal-title" class="text-brand font-extrabold uppercase tracking-widest text-[9px] sm:text-xs">Documentation</h3>
+                <div onclick="toggleInfo(false)" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </div>
             </div>
             <div id="modal-body" class="info-body"></div>
@@ -245,48 +267,35 @@
         const legalDataEn = {
             about: `
                 <h2>Representations; Product Disclaimers</h2>
-                <p>Forest Mountain Farms Gummies is committed to improving the well-being of our customers. You understand, however, that Our Products have not been evaluated by the Food and Drug Administration, and Our Products are not intended to diagnose, treat, cure or prevent any disease. The information on this Website or in emails is designed for informational purposes only and is not intended to be a substitute for informed medical advice or care.</p>
-                <p>You understand that You should not use this information to diagnose or treat any health problems or illnesses without consulting Your doctor or physician. You further understand that this Product is not intended for use by persons under 18 years of age. You also understand that the Product is not intended or to be used to treat any type of medical condition such as obesity.</p>
-                <p>Individual results will vary from person to person, and are dependent on factors including age, weight, diet, and exercise regimen.</p>
+                <p>Forest Mountain Farms CBD Gummies is committed to improving the well-being of our customers. You understand, however, that Forest Mountain Farms Gummies have not been evaluated by the Food and Drug Administration, and Our Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+                <p>The information on this Website or in emails is designed for informational purposes only and is not intended to be a substitute for informed medical advice or care. You further understand that this Product is not intended for use by persons under 18 years of age.</p>
             `,
             terms: `
                 <h2>Terms and Conditions</h2>
                 <p>If you are not completely satisfied with your purchase of Forest Mountain Farms products, please call <strong>877-857-6583</strong> 8AM – 9PM EST Monday - Sunday. We offer a 30 day money back guarantee on all Forest Mountain Farms products.</p>
-                <h3>User Agreement</h3>
-                <p>You must read and agree to these Terms and Conditions before ordering. By placing an order, You accept, without limitation or qualification, these Terms of Use and agree to the terms of Our Privacy Statement.</p>
                 <h3>Pricing & Billing</h3>
                 <div class="price-box">
                     <strong>"Subscribe and Save"</strong><br>
                     - Buy 1 get 1 Free: $119.00 + $9.95 S&H for 2 Bottles.<br>
                     - Buy 2 get 1 Free: $159.00 + $0.00 S&H for 3 Bottles.<br>
-                    - Buy 3 get 2 Free: $199.00 + $0.00 S&H for 5 Bottles.<br>
-                    <em>Note: Monthly Digital Publication fee of $19.93 applies.</em>
-                </div>
-                <div class="price-box">
-                    <strong>"One Time Purchase"</strong><br>
-                    - Buy 1 get 1 Free: $133.00 + $9.95 S&H.<br>
-                    - Buy 2 get 1 Free: $180.00 + $0.00 S&H.<br>
-                    - Buy 3 get 2 Free: $234.00 + $0.00 S&H.
+                    - Buy 3 get 2 Free: $199.00 + $0.00 S&H for 5 Bottles.
                 </div>
                 <p><strong>Descriptor:</strong> Your credit card entry will appear as <strong>Forest Mountain Farms Gummies 844-203-9923</strong>.</p>
             `,
             privacy: `
                 <h2>Privacy Policy</h2>
-                <p>This Privacy Policy governs your use of this Website. We follow rigorous security standards (SSL secure) and data protection protocols.</p>
-                <h3>Information Collection</h3>
-                <p>Each time you provide information via the Website, Company may collect personal information including name, email, mailing address, and telephone number.</p>
-                <p><strong>Cookies & Technology:</strong> We use cookies and web beacons to track online behavior habits for marketing purposes to determine products or services you may be interested in.</p>
-                <p><strong>Children:</strong> Company will never knowingly collect any Personal Information about children under the age of 18.</p>
+                <p>This Privacy Policy governs your use of this Website. We follow rigorous security standards (SSL secure) and data protection protocols. Company may collect personal information including name, email, mailing address, and telephone number provided via Surveys.</p>
+                <p><strong>Cookies & Technology:</strong> We use cookies and web beacons to track online behavior habits for marketing purposes. Company will never knowingly collect any Personal Information about children under the age of 18.</p>
             `,
             returns: `
                 <h2>Refund Policy</h2>
-                <p>We refund all cases of fraud and unauthorized transactions included shipping and handling charges. Call to obtain a refund. Additional refunds are issued at the discretion of the company. Refunds take up to five (5) days to appear on your statement.</p>
+                <p>We refund all cases of fraud and unauthorized transactions included shipping and handling charges. Customers are restricted to receiving a single refund per product ordered. Refunds take up to five (5) days to appear on your statement.</p>
                 <h2>Return Policy</h2>
-                <p>To obtain a refund, contact customer service by phone and obtain an <strong>RMA (Return Merchandise Authorization)</strong> number. Write this number on the outside of the shipping package and send it to our fulfillment center within thirty (30) days.</p>
+                <p>To obtain a refund, contact customer service by phone and obtain an <strong>RMA (Return Merchandise Authorization)</strong> number. Send the product back to our fulfillment center within thirty (30) days.</p>
             `,
             shipping: `
                 <h2>Shipping Policy</h2>
-                <p>You will receive your package within <strong>3-5 business days</strong> of payment via <strong>USPS First Class Mail</strong>. Shipping and handling costs are generally not refundable.</p>
+                <p>Standard delivery takes <strong>3-5 business days</strong> of payment via <strong>USPS First Class Mail</strong>. Shipping and handling costs are generally not refundable.</p>
             `,
             contact: `
                 <h2>Customer Care</h2>
@@ -294,7 +303,6 @@
                 <p><strong>Call Us:</strong> 877-857-6583</p>
                 <p><strong>Hours:</strong> 8AM – 9PM EST Monday - Sunday</p>
                 <p><strong>Email:</strong> support@get-sensseloshop.com</p>
-                <p><strong>Billing Support:</strong> Please refer to the descriptor <strong>Forest Mountain Farms Gummies 844-203-9923</strong> on your bank statement.</p>
             `
         };
 
