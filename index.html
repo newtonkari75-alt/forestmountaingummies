@@ -46,7 +46,7 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #f4f4f4; /* Fundo neutro para suportar a imagem */
+            background-color: #000; 
             margin: 0; 
             padding: 0; 
             overflow: hidden; 
@@ -54,20 +54,28 @@
             color: #1a1a1a;
         }
         
-        /* Ajuste da Camada de Fundo: Imagem nítida com blur leve */
+        /* Camada de Fundo Responsiva - Sem máscara branca */
         .bg-layer { 
             position: fixed; 
             inset: 0; 
             background-size: cover; 
             background-position: center; 
             z-index: 1; 
+            /* Mobile default */
             background-image: url('images/forestgummies-mobile.png');
-            opacity: 1; /* Opacidade total para a imagem aparecer bem */
-            filter: blur(4px) brightness(0.9); /* Blur leve conforme solicitado e brilho levemente reduzido para o texto saltar */
-            transform: scale(1.1); /* Evita bordas brancas do blur */
+            opacity: 1; 
+            filter: blur(2px); /* Bem bem levemente borrado */
+            transform: scale(1.03); /* Evita bordas brancas do blur */
+        }
+
+        /* Desktop background image override */
+        @media (min-width: 768px) {
+            .bg-layer {
+                background-image: url('images/forestgummies-desktop.png');
+            }
         }
         
-        /* Modal Design - Clean & Light with better transparency */
+        /* Modal Design - Limpo para manter legibilidade sobre fotos coloridas */
         .modal-overlay { 
             position: fixed; 
             inset: 0; 
@@ -75,19 +83,19 @@
             align-items: center; 
             justify-content: center; 
             z-index: 50; 
-            background-color: rgba(255, 255, 255, 0.4); /* Bem transparente para ver o fundo */
-            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.2); /* Quase transparente para ver o fundo */
+            backdrop-filter: blur(4px);
         }
         
         .modal-content { 
-            background-color: rgba(255, 255, 255, 0.95); /* Quase opaco para legibilidade */
-            border: 1px solid rgba(255, 255, 255, 0.3); 
+            background-color: rgba(255, 255, 255, 0.98); 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
             padding: 3rem 2rem; 
             border-radius: 2.5rem; 
             max-width: 480px; 
             width: 90%; 
             text-align: center; 
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.3); 
             animation: modalEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
         }
 
@@ -103,12 +111,13 @@
             width: 100%; 
             z-index: 40; 
             padding: 1.5rem; 
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); /* Gradiente escuro sutil para leitura no rodapé */
+            /* Gradiente escuro para garantir leitura se a foto for clara embaixo */
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
             text-align: center; 
         }
         .footer-link { 
             color: #fff; 
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
             font-size: 10px; 
             text-transform: uppercase; 
             letter-spacing: 1.2px; 
@@ -116,7 +125,7 @@
             cursor: pointer; 
             transition: 0.2s; 
             font-weight: 700; 
-            opacity: 0.8;
+            opacity: 0.9;
         }
         .footer-link:hover { opacity: 1; color: #75C100; }
 
@@ -127,7 +136,7 @@
             display: none; 
             align-items: center; 
             justify-content: center; 
-            background-color: rgba(0, 0, 0, 0.7); 
+            background-color: rgba(0, 0, 0, 0.85); 
             padding: 1.5rem; 
             backdrop-filter: blur(15px); 
         }
@@ -143,18 +152,17 @@
             display: flex; 
             flex-direction: column; 
             overflow: hidden; 
-            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
         }
         .info-header { padding: 1.25rem 2rem; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
         .info-body { padding: 2.5rem; overflow-y: auto; font-size: 0.92rem; line-height: 1.7; text-align: left; color: #444; }
         .info-body h2 { color: #1a1a1a; font-weight: 800; margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem; border-left: 4px solid #75C100; padding-left: 12px; }
-        .info-body h3 { color: #333; font-weight: 700; margin-top: 1.2rem; margin-bottom: 0.5rem; font-size: 1rem; }
         .price-box { background: #f9f9f9; padding: 1.25rem; border-radius: 1rem; border: 1px solid #eee; margin: 1rem 0; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
-    <!-- Background Layer -->
+    <!-- Background Layer (Imagens responsivas aplicadas via CSS) -->
     <div class="bg-layer" aria-hidden="true"></div>
 
     <!-- Age Verification Modal -->
@@ -188,7 +196,7 @@
         </div>
     </div>
 
-    <!-- Compliant Footer -->
+    <!-- Footer Blindado e Completo -->
     <footer>
         <nav class="flex flex-wrap justify-center gap-y-3 mb-6">
             <span class="footer-link" onclick="openInfo('about')">About Us</span>
@@ -198,10 +206,10 @@
             <span class="footer-link" onclick="openInfo('shipping')">Shipping</span>
             <span class="footer-link" onclick="openInfo('contact')">Contact</span>
         </nav>
-        <div class="text-[9px] text-white/50 space-y-1 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-md">
+        <div class="text-[9px] text-white/70 space-y-1 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-lg">
             <p>© 2026 Forest Mountain Farms - All rights reserved.</p>
             <p>UAB CommerceCore | <span class="text-brand font-bold">Authorized Distributor</span> | VAT: LT302566167</p>
-            <p id="ui-disclaimer" class="pt-2 opacity-60 leading-normal">
+            <p id="ui-disclaimer" class="pt-2 opacity-80 leading-normal">
                 Disclaimer: This site is an independent information portal managed by an authorized distributor. Results may vary and depend on individual characteristics.
             </p>
         </div>
