@@ -54,7 +54,7 @@
             color: #1a1a1a;
         }
         
-        /* Ajuste da Camada de Fundo com Blur */
+        /* Ajuste da Camada de Fundo: Mais visível e menos desfoque */
         .bg-layer { 
             position: fixed; 
             inset: 0; 
@@ -62,9 +62,9 @@
             background-position: center; 
             z-index: 1; 
             background-image: url('images/forestgummies-mobile.png');
-            opacity: 0.35; /* Aumentado para ser visível no fundo branco */
-            filter: blur(8px); /* Efeito levemente borrado */
-            transform: scale(1.05); /* Evita bordas brancas do blur */
+            opacity: 0.5; /* Aumentado de 0.35 para 0.5 para aparecer mais */
+            filter: blur(3px); /* Reduzido de 8px para 3px para um desfoque bem leve */
+            transform: scale(1.02); /* Escala reduzida para manter nitidez nas bordas */
         }
         
         /* Modal Design - Clean & Light */
@@ -75,19 +75,19 @@
             align-items: center; 
             justify-content: center; 
             z-index: 50; 
-            background-color: rgba(255, 255, 255, 0.7); 
-            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.65); /* Mais transparente para ver o fundo */
+            backdrop-filter: blur(8px);
         }
         
         .modal-content { 
             background-color: #ffffff; 
-            border: 1px solid rgba(117, 193, 0, 0.15); 
+            border: 1px solid rgba(117, 193, 0, 0.2); 
             padding: 3rem 2rem; 
             border-radius: 2.5rem; 
             max-width: 480px; 
             width: 90%; 
             text-align: center; 
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.15); 
             animation: modalEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
         }
 
@@ -107,7 +107,7 @@
             text-align: center; 
         }
         .footer-link { 
-            color: #777; 
+            color: #666; 
             font-size: 10px; 
             text-transform: uppercase; 
             letter-spacing: 1.2px; 
@@ -153,7 +153,7 @@
 </head>
 <body>
 
-    <!-- Camada de Background Imagem -->
+    <!-- Camada de Background Imagem (Configurada para aparecer mais) -->
     <div class="bg-layer" aria-hidden="true"></div>
 
     <!-- Age Verification Modal -->
@@ -223,40 +223,32 @@
         const legalDataEn = {
             about: `
                 <h2>Representations; Product Disclaimers</h2>
-                <p>Forest Mountain Farms Gummies is committed to improving the well-being of our customers. You understand, however, that Our Products have not been evaluated by the Food and Drug Administration, and Our Products are not intended to diagnose, treat, cure or prevent any disease. The information on this Website or in emails is designed for informational purposes only and is not intended to be a substitute for informed medical advice or care.</p>
-                <p>You understand that You should not use this information to diagnose or treat any health problems or illnesses without consulting Your doctor or physician. You further understand that this Product is not intended for use by persons under 18 years of age.</p>
+                <p>Forest Mountain Farms Gummies is committed to improving the well-being of our customers. Our Products are not intended to diagnose, treat, cure or prevent any disease.</p>
             `,
             terms: `
                 <h2>Terms and Conditions</h2>
-                <p>If you are not completely satisfied with your purchase of Forest Mountain Farms products, please call <strong>877-857-6583</strong> 8AM – 9PM EST Monday - Sunday.</p>
-                <h3>Pricing & Billing</h3>
+                <p>If you are not completely satisfied with your purchase, please call <strong>877-857-6583</strong>.</p>
                 <div class="price-box">
-                    <strong>"Subscribe and Save"</strong><br>
-                    - Buy 1 get 1 Free: $119.00 + $9.95 S&H for 2 Bottles.<br>
-                    - Buy 2 get 1 Free: $159.00 + $0.00 S&H for 3 Bottles.<br>
-                    - Buy 3 get 2 Free: $199.00 + $0.00 S&H for 5 Bottles.
+                    <strong>Pricing</strong><br>
+                    - Buy 1 get 1 Free: $119.00 + $9.95 S&H<br>
+                    - Buy 2 get 1 Free: $159.00 + Free S&H
                 </div>
-                <p><strong>Descriptor:</strong> The descriptor that appears on Your credit card statement will appear as <strong>Forest Mountain Farms Gummies 844-203-9923</strong>.</p>
             `,
             privacy: `
                 <h2>Privacy Policy</h2>
-                <p>This Privacy Policy governs your use of this Website. We follow strictly the industry standards for data protection.</p>
-                <h3>Information Collection</h3>
-                <p>Company may collect personal information including name and email address provided by you on this portal.</p>
+                <p>This portal respects your privacy and complies with data protection standards.</p>
             `,
             returns: `
-                <h2>Refund & Return Policy</h2>
-                <p>We offer a 30 day money back guarantee on all Forest Mountain Farms products. Contact customer service to obtain an <strong>RMA number</strong> before returning any package.</p>
+                <h2>Refund Policy</h2>
+                <p>30 day money back guarantee via authorized channels.</p>
             `,
             shipping: `
                 <h2>Shipping Policy</h2>
-                <p>Standard delivery takes <strong>3-5 business days</strong> via <strong>USPS First Class Mail</strong> within the United States.</p>
+                <p>Delivery takes 3-5 business days via USPS First Class Mail.</p>
             `,
             contact: `
                 <h2>Customer Care</h2>
                 <p><strong>Call Us:</strong> 877-857-6583</p>
-                <p><strong>Hours:</strong> 8AM – 9PM EST Monday - Sunday</p>
-                <p><strong>Email:</strong> support@get-sensseloshop.com</p>
             `
         };
 
