@@ -54,7 +54,7 @@
             color: #1a1a1a;
         }
         
-        /* Camada de Fundo Responsiva - Sem máscara branca */
+        /* Responsive Background Layer - No white mask, high visibility */
         .bg-layer { 
             position: fixed; 
             inset: 0; 
@@ -64,8 +64,8 @@
             /* Mobile default */
             background-image: url('images/forestgummies-mobile.png');
             opacity: 1; 
-            filter: blur(2px); /* Bem bem levemente borrado */
-            transform: scale(1.03); /* Evita bordas brancas do blur */
+            filter: blur(2px); /* Very slight blur as requested */
+            transform: scale(1.03); /* Prevents white edges from blur */
         }
 
         /* Desktop background image override */
@@ -75,7 +75,7 @@
             }
         }
         
-        /* Modal Design - Limpo para manter legibilidade sobre fotos coloridas */
+        /* Modal Design - Clean and Compact for Mobile */
         .modal-overlay { 
             position: fixed; 
             inset: 0; 
@@ -83,20 +83,28 @@
             align-items: center; 
             justify-content: center; 
             z-index: 50; 
-            background-color: rgba(255, 255, 255, 0.2); /* Quase transparente para ver o fundo */
-            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(3px);
         }
         
         .modal-content { 
             background-color: rgba(255, 255, 255, 0.98); 
             border: 1px solid rgba(255, 255, 255, 0.5); 
-            padding: 3rem 2rem; 
-            border-radius: 2.5rem; 
-            max-width: 480px; 
-            width: 90%; 
+            padding: 2rem 1.5rem; /* Reduced padding for mobile */
+            border-radius: 1.5rem; /* Slightly smaller radius for a tighter look */
+            max-width: 420px; 
+            width: 85%; 
             text-align: center; 
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.3); 
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4); 
             animation: modalEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+
+        /* Desktop padding adjustment */
+        @media (min-width: 640px) {
+            .modal-content {
+                padding: 3.5rem 2.5rem;
+                border-radius: 2.5rem;
+            }
         }
 
         @keyframes modalEnter { 
@@ -111,17 +119,16 @@
             width: 100%; 
             z-index: 40; 
             padding: 1.5rem; 
-            /* Gradiente escuro para garantir leitura se a foto for clara embaixo */
-            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
             text-align: center; 
         }
         .footer-link { 
             color: #fff; 
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
             font-size: 10px; 
             text-transform: uppercase; 
             letter-spacing: 1.2px; 
-            margin: 0 10px; 
+            margin: 0 8px; 
             cursor: pointer; 
             transition: 0.2s; 
             font-weight: 700; 
@@ -137,7 +144,7 @@
             align-items: center; 
             justify-content: center; 
             background-color: rgba(0, 0, 0, 0.85); 
-            padding: 1.5rem; 
+            padding: 1rem; 
             backdrop-filter: blur(15px); 
         }
         .info-modal.active { display: flex; }
@@ -145,60 +152,66 @@
             background-color: #ffffff; 
             color: #444; 
             width: 100%; 
-            max-width: 850px; 
+            max-width: 800px; 
             max-height: 85vh; 
-            border-radius: 2rem; 
+            border-radius: 1.5rem; 
             border: 1px solid #eee; 
             display: flex; 
             flex-direction: column; 
             overflow: hidden; 
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
         }
-        .info-header { padding: 1.25rem 2rem; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
-        .info-body { padding: 2.5rem; overflow-y: auto; font-size: 0.92rem; line-height: 1.7; text-align: left; color: #444; }
+        .info-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+        .info-body { padding: 1.5rem 1.5rem; overflow-y: auto; font-size: 0.9rem; line-height: 1.6; text-align: left; color: #444; }
+        
+        @media (min-width: 640px) {
+            .info-body { padding: 2.5rem; font-size: 0.92rem; }
+            .info-content { border-radius: 2rem; }
+        }
+        
         .info-body h2 { color: #1a1a1a; font-weight: 800; margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem; border-left: 4px solid #75C100; padding-left: 12px; }
-        .price-box { background: #f9f9f9; padding: 1.25rem; border-radius: 1rem; border: 1px solid #eee; margin: 1rem 0; font-size: 0.85rem; }
+        .price-box { background: #f9f9f9; padding: 1rem; border-radius: 1rem; border: 1px solid #eee; margin: 1rem 0; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <!-- Background Layer (Imagens responsivas aplicadas via CSS) -->
+    <!-- Background Layer (Responsive images via CSS) -->
     <div class="bg-layer" aria-hidden="true"></div>
 
     <!-- Age Verification Modal -->
     <div id="age-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand/10 text-brand text-2xl font-black">
+            <div class="mb-4 sm:mb-8 inline-flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-brand/10 text-brand text-xl sm:text-2xl font-black">
                 18+
             </div>
             
-            <h1 class="text-3xl md:text-4xl font-black mb-4 tracking-tight text-gray-900 uppercase italic">
+            <h1 class="text-2xl sm:text-4xl font-black mb-3 sm:mb-4 tracking-tight text-gray-900 uppercase italic leading-tight">
                 Forest Mountain Farms
             </h1>
             
-            <div class="h-1.5 w-16 bg-brand mx-auto mb-8 rounded-full"></div>
+            <div class="h-1 w-12 sm:h-1.5 sm:w-16 bg-brand mx-auto mb-6 sm:mb-8 rounded-full"></div>
             
-            <p id="ui-description" class="text-gray-500 mb-10 leading-relaxed text-sm font-medium px-6 text-center">
+            <p class="text-gray-500 mb-8 sm:mb-10 leading-relaxed text-[11px] sm:text-sm font-medium px-2 sm:px-6 text-center">
                 This portal contains wellness product information for adults. Access is restricted to individuals aged 18 and older.
             </p>
 
-            <div class="space-y-4 px-4">
-                <a id="ui-enter-btn" href="https://www.fasttrack37.com/PM7HK3TH/2R6SWLR3/" 
-                   class="block w-full bg-brand text-white py-5 rounded-2xl font-black hover:bg-brandDark transition-all uppercase tracking-widest text-xs text-center shadow-lg shadow-brand/30 active:scale-95">
+            <div class="space-y-3 sm:space-y-4 px-2 sm:px-4">
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2R6SWLR3/" 
+                   class="block w-full bg-brand text-white py-4 sm:py-5 rounded-xl sm:rounded-2xl font-black hover:bg-brandDark transition-all uppercase tracking-widest text-[10px] sm:text-xs text-center shadow-lg shadow-brand/30 active:scale-95">
                     Enter & View Official Site
                 </a>
                 
-                <button id="ui-exit-btn" onclick="window.location.href='https://www.google.com'" 
-                        class="block w-full bg-transparent border border-gray-200 text-gray-400 py-3 rounded-2xl font-bold hover:text-gray-600 hover:border-gray-400 transition-all text-[10px] uppercase tracking-widest">
+                <button onclick="window.location.href='https://www.google.com'" 
+                        class="block w-full bg-transparent border border-gray-200 text-gray-400 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold hover:text-gray-600 hover:border-gray-400 transition-all text-[9px] sm:text-[10px] uppercase tracking-widest">
                     Exit Portal
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Footer Blindado e Completo -->
+    <!-- Armored Footer -->
     <footer>
-        <nav class="flex flex-wrap justify-center gap-y-3 mb-6">
+        <nav class="flex flex-wrap justify-center gap-y-2 mb-4 sm:mb-6">
             <span class="footer-link" onclick="openInfo('about')">About Us</span>
             <span class="footer-link" onclick="openInfo('terms')">Terms</span>
             <span class="footer-link" onclick="openInfo('privacy')">Privacy</span>
@@ -206,10 +219,10 @@
             <span class="footer-link" onclick="openInfo('shipping')">Shipping</span>
             <span class="footer-link" onclick="openInfo('contact')">Contact</span>
         </nav>
-        <div class="text-[9px] text-white/70 space-y-1 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-lg">
+        <div class="text-[8px] sm:text-[9px] text-white/70 space-y-1 font-semibold tracking-wider uppercase max-w-4xl mx-auto drop-shadow-lg">
             <p>© 2026 Forest Mountain Farms - All rights reserved.</p>
             <p>UAB CommerceCore | <span class="text-brand font-bold">Authorized Distributor</span> | VAT: LT302566167</p>
-            <p id="ui-disclaimer" class="pt-2 opacity-80 leading-normal">
+            <p class="pt-2 opacity-80 leading-normal">
                 Disclaimer: This site is an independent information portal managed by an authorized distributor. Results may vary and depend on individual characteristics.
             </p>
         </div>
@@ -219,9 +232,9 @@
     <div id="info-modal" class="info-modal" onclick="closeInfo(event)">
         <div class="info-content" onclick="event.stopPropagation()">
             <div class="info-header">
-                <h3 id="modal-title" class="text-brand font-extrabold uppercase tracking-widest text-xs">Legal Documentation</h3>
-                <div onclick="toggleInfo(false)" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <h3 id="modal-title" class="text-brand font-extrabold uppercase tracking-widest text-[10px] sm:text-xs">Legal Documentation</h3>
+                <div onclick="toggleInfo(false)" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </div>
             </div>
             <div id="modal-body" class="info-body"></div>
@@ -302,15 +315,6 @@
         function closeInfo(e) {
             if (e.target.id === 'info-modal') toggleInfo(false);
         }
-
-        window.onload = () => {
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.startsWith('pt')) {
-                document.getElementById('ui-description').innerText = "Este portal contém informações sobre produtos de bem-estar para adultos. O acesso é restrito a maiores de 18 anos.";
-                document.getElementById('ui-enter-btn').innerText = "Entrar e Ver Site Oficial";
-                document.getElementById('ui-exit-btn').innerText = "Sair do Portal";
-            }
-        };
     </script>
 </body>
 </html>
